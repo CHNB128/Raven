@@ -3,7 +3,7 @@
   "name": "Raven",
   "builds": [
     { "src": "api/index.js", "use": "@now/node" },
-    { "src": "www/next.config.js", "use": "@now/next" }
+    { "src": "www/package.json", "use": "@now/next" }
   ],
   "routes": [
     {
