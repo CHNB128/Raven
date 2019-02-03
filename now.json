@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "Raven",
+  "builds": [
+    { "src": "api/index.js", "use": "@now/node" },
+    { "src": "www/next.config.js", "use": "@now/next" }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/www/$1",
+      "headers": {
+        "x-request-path": "$1"
+      }
+    }
+  ]
+}
